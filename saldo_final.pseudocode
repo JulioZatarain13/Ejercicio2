@@ -8,15 +8,17 @@ Function calcularSaldo(trasacciones){
     }
 
     //Procesar Lista
-    for(var i= 0; i < trasacciones.length; i++){
-        if(trasacciones[i].Tipo == "ingreso"){
-            saldo = saldo + trasacciones[i].monto;
-        }else if(trasacciones[i].Tipo == "egreso"){
-            saldo = saldo - trasacciones[i].monto;
+
+    for(var transaccion of transacciones){
+        if(transaccion.Tipo == "ingreso"){
+            saldo = saldo + trasaccion.monto;
+        }else if(transaccion.Tipo == "egreso"){
+            saldo = saldo - trasaccion.monto;
         }else{
-            console.log("TIpo de transaccion desconocida con el id: " + transacciones[i].id);
+            console.log("TIpo de transaccion desconocida con el id: " + transaccion.id);
         }
     }
+ 
 
     return saldo;
 }
