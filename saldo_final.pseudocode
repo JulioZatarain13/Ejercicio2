@@ -2,12 +2,19 @@ Function calcularSaldo(trasacciones){
     //Variables
     saldo = 0;
 
+    //Validacion de datos en la Lista
+    if(trasacciones == null || trasacciones.length == 0){
+        return saldo;
+    }
+
     //Procesar Lista
-    for(var i= 0; i< trasacciones.length; i++){
+    for(var i= 0; i < trasacciones.length; i++){
         if(trasacciones[i].Tipo == "ingreso"){
             saldo = saldo + trasacciones[i].monto;
-        }else{
+        }else if(trasacciones[i].Tipo == "egreso"){
             saldo = saldo - trasacciones[i].monto;
+        }else{
+            console.log("TIpo de transaccion desconocida con el id: " + transacciones[i].id);
         }
     }
 
