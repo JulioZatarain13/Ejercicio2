@@ -1,0 +1,15 @@
+Function calcularSaldo(trasacciones){
+    //Variables
+    saldo = 0;
+
+    //Procesar Lista
+    for(var i= 0; i< trasacciones.length; i++){
+        if(trasacciones[i].Tipo == "ingreso"){
+            saldo = saldo + trasacciones[i].monto;
+        }else{
+            saldo = saldo - trasacciones[i].monto;
+        }
+    }
+
+    return saldo;
+}
